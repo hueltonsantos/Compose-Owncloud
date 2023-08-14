@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  owncloud:
+    image: owncloud/server
+    ports:
+      - "8080:8080"  # Mapeamento de portas
+    volumes:
+      - owncloud-data:/var/www/html
+    environment:
+      - OWNCLOUD_DOMAIN=your_ip_address:8080 # Substitua "your_ip_address" pelo endereço IP da máquina
+    restart: always
+
+volumes:
+  owncloud-data:
+
